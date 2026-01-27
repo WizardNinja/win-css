@@ -1,0 +1,40 @@
+// ==========================================================================
+// Typography - vw-based font sizes
+// ==========================================================================
+
+@use "sass:map";
+@use "sass:math";
+@use "variables" as *;
+@use "mixins" as *;
+
+// Generate font size classes for each breakpoint
+// sm/md: vw = (target-px / breakpoint-width) * 100
+// lg: all classes switch to px values (stops scaling)
+
+// sm and md breakpoints: use vw for fluid scaling
+@each $bp-name, $bp-width in $breakpoints {
+  @if $bp-name != lg {
+    @include breakpoint($bp-name) {
+      @each $size-name, $size-px in $font-pixel-sizes {
+        $px-value: math.div($size-px, 1px);
+        $bp-value: math.div($bp-width, 1px);
+        $vw-value: math.div($px-value, $bp-value) * 100;
+
+        .#{$bp-name}-f-#{$size-name} {
+          font-size: #{$vw-value}vw;
+        }
+      }
+    }
+  }
+}
+
+// lg breakpoint: all font classes (sm-, md-, lg-) switch to px
+@include breakpoint(lg) {
+  @each $bp-name, $bp-width in $breakpoints {
+    @each $size-name, $size-px in $font-pixel-sizes {
+      .#{$bp-name}-f-#{$size-name} {
+        font-size: $size-px;
+      }
+    }
+  }
+}

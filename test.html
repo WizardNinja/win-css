@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WiN-CSS Framework Test</title>
+  <link rel="stylesheet" href="dist/win.css">
+  <style>
+    /* Test styling to visualize the grid */
+    .demo-box {
+      background: #e0e0e0;
+      border: 1px solid #999;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .demo-section {
+      border-bottom: 2px solid #333;
+    }
+    .ar-demo {
+      background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sm-p-10 md-p-20 lg-p-30">
+
+    <!-- Typography Test -->
+    <section class="demo-section sm-py-20">
+      <h2 class="sm-f-large md-f-xlarge lg-f-huge">Typography Test</h2>
+      <p class="sm-f-tiny">Tiny text (12px target)</p>
+      <p class="sm-f-small md-f-medium lg-f-large">Small → Medium → Large (responsive)</p>
+      <p class="sm-f-medium">Medium text (16px target)</p>
+      <p class="sm-f-large">Large text (20px target)</p>
+      <p class="sm-f-xlarge">XLarge text (24px target)</p>
+      <p class="sm-f-huge">Huge text (32px target)</p>
+    </section>
+
+    <!-- Grid Test -->
+    <section class="demo-section sm-py-20">
+      <h2 class="sm-f-large md-f-xlarge lg-f-huge">Grid Test (12 columns)</h2>
+
+      <h3 class="sm-f-medium sm-my-10">.row - max-width 1300px, centered at lg:</h3>
+      <div class="row">
+        <div class="sm-12 md-6 lg-4 sm-py-5">
+          <div class="demo-box sm-p-10">sm-12 md-6 lg-4</div>
+        </div>
+        <div class="sm-12 md-6 lg-4 sm-py-5">
+          <div class="demo-box sm-p-10">sm-12 md-6 lg-4</div>
+        </div>
+        <div class="sm-12 md-12 lg-4 sm-py-5">
+          <div class="demo-box sm-p-10">sm-12 md-12 lg-4</div>
+        </div>
+      </div>
+
+      <h3 class="sm-f-medium sm-my-10">.container - full width always:</h3>
+      <div class="container">
+        <div class="sm-12 md-6 lg-4 sm-py-5">
+          <div class="demo-box sm-p-10">sm-12 md-6 lg-4</div>
+        </div>
+        <div class="sm-12 md-6 lg-4 sm-py-5">
+          <div class="demo-box sm-p-10">sm-12 md-6 lg-4</div>
+        </div>
+        <div class="sm-12 md-12 lg-4 sm-py-5">
+          <div class="demo-box sm-p-10">sm-12 md-12 lg-4</div>
+        </div>
+      </div>
+
+      <h3 class="sm-f-medium sm-my-10">6-column layout with gap (using padding on columns):</h3>
+      <div class="row">
+        <div class="sm-6 sm-px-5">
+          <div class="demo-box sm-p-10">sm-6</div>
+        </div>
+        <div class="sm-6 sm-px-5">
+          <div class="demo-box sm-p-10">sm-6</div>
+        </div>
+      </div>
+
+      <h3 class="sm-f-medium sm-my-10">4-column layout with gap:</h3>
+      <div class="row">
+        <div class="sm-3 sm-px-5 sm-py-5">
+          <div class="demo-box sm-p-10">sm-3</div>
+        </div>
+        <div class="sm-3 sm-px-5 sm-py-5">
+          <div class="demo-box sm-p-10">sm-3</div>
+        </div>
+        <div class="sm-3 sm-px-5 sm-py-5">
+          <div class="demo-box sm-p-10">sm-3</div>
+        </div>
+        <div class="sm-3 sm-px-5 sm-py-5">
+          <div class="demo-box sm-p-10">sm-3</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spacing Test -->
+    <section class="demo-section sm-py-20">
+      <h2 class="sm-f-large md-f-xlarge lg-f-huge">Spacing Test</h2>
+
+      <h3 class="sm-f-medium sm-my-10">Padding examples:</h3>
+      <div class="demo-box sm-p-5 sm-my-5">sm-p-5 (0.5em)</div>
+      <div class="demo-box sm-p-10 sm-my-5">sm-p-10 (1em)</div>
+      <div class="demo-box sm-p-20 sm-my-5">sm-p-20 (2em)</div>
+      <div class="demo-box sm-px-30 sm-py-10 sm-my-5">sm-px-30 sm-py-10</div>
+
+      <h3 class="sm-f-medium sm-my-10">Responsive padding:</h3>
+      <div class="demo-box sm-p-10 md-p-20 lg-p-30 sm-my-5">sm-p-10 md-p-20 lg-p-30</div>
+    </section>
+
+    <!-- Aspect Ratio Test -->
+    <section class="demo-section sm-py-20">
+      <h2 class="sm-f-large md-f-xlarge lg-f-huge">Aspect Ratio Test</h2>
+
+      <div class="row">
+        <div class="sm-6 md-3 sm-p-10">
+          <p class="sm-f-small sm-my-5">1:1</p>
+          <div class="ar-demo sm-ar-1x1">1x1</div>
+        </div>
+        <div class="sm-6 md-3 sm-p-10">
+          <p class="sm-f-small sm-my-5">16:9</p>
+          <div class="ar-demo sm-ar-16x9">16x9</div>
+        </div>
+        <div class="sm-6 md-3 sm-p-10">
+          <p class="sm-f-small sm-my-5">4:3</p>
+          <div class="ar-demo sm-ar-4x3">4x3</div>
+        </div>
+        <div class="sm-6 md-3 sm-p-10">
+          <p class="sm-f-small sm-my-5">21:9</p>
+          <div class="ar-demo sm-ar-21x9">21x9</div>
+        </div>
+      </div>
+
+      <h3 class="sm-f-medium sm-my-10">Responsive aspect ratio (square on mobile, 16:9 on tablet, 21:9 on desktop):</h3>
+      <div class="ar-demo sm-ar-1x1 md-ar-16x9 lg-ar-21x9" style="max-width: 400px;">
+        sm-ar-1x1 md-ar-16x9 lg-ar-21x9
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

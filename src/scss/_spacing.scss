@@ -1,0 +1,53 @@
+// ==========================================================================
+// Spacing - em-based padding and margins
+// ==========================================================================
+
+@use "sass:map";
+@use "sass:math";
+@use "variables" as *;
+@use "mixins" as *;
+
+// Generate spacing classes for each breakpoint
+// Class number / 10 = em value (e.g., 15 = 1.5em)
+
+@each $bp-name, $bp-width in $breakpoints {
+  @include breakpoint($bp-name) {
+    @each $scale in $spacing-scale {
+      $em-value: math.div($scale, 10);
+
+      // Padding - all sides
+      .#{$bp-name}-p-#{$scale} {
+        padding: #{$em-value}em;
+      }
+
+      // Padding - horizontal (left and right)
+      .#{$bp-name}-px-#{$scale} {
+        padding-left: #{$em-value}em;
+        padding-right: #{$em-value}em;
+      }
+
+      // Padding - vertical (top and bottom)
+      .#{$bp-name}-py-#{$scale} {
+        padding-top: #{$em-value}em;
+        padding-bottom: #{$em-value}em;
+      }
+
+      // Margin - all sides
+      .#{$bp-name}-m-#{$scale} {
+        margin: #{$em-value}em;
+      }
+
+      // Margin - horizontal (left and right)
+      .#{$bp-name}-mx-#{$scale} {
+        margin-left: #{$em-value}em;
+        margin-right: #{$em-value}em;
+      }
+
+      // Margin - vertical (top and bottom)
+      .#{$bp-name}-my-#{$scale} {
+        margin-top: #{$em-value}em;
+        margin-bottom: #{$em-value}em;
+      }
+    }
+  }
+}

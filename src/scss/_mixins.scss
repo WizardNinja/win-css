@@ -1,0 +1,20 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+@use "sass:map";
+@use "sass:math";
+@use "variables" as *;
+
+// Media query mixin for breakpoints
+@mixin breakpoint($name) {
+  @media (min-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+// Calculate vw value from target pixel size and breakpoint width
+// Formula: vw = (target-px / breakpoint-width) * 100
+@function px-to-vw($target-px, $breakpoint-width) {
+  @return math.div($target-px, $breakpoint-width) * 100vw;
+}

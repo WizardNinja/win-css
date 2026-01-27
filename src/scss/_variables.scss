@@ -1,0 +1,41 @@
+// ==========================================================================
+// Variables
+// ==========================================================================
+
+// Breakpoints (mobile-first: min-width)
+$breakpoints: (
+  sm: 360px,
+  md: 760px,
+  lg: 1300px
+);
+
+// Target pixel sizes for fonts
+$font-pixel-sizes: (
+  tiny: 12px,
+  small: 14px,
+  medium: 16px,
+  large: 20px,
+  xlarge: 24px,
+  huge: 32px
+);
+
+// Spacing scale (will be divided by 10 to get em)
+// e.g., 15 = 1.5em
+$spacing-scale: (0, 5, 10, 15, 20, 25, 30, 40, 50);
+
+// Aspect ratios
+$aspect-ratios: (
+  "1x1": calc(1/1),
+  "2x1": calc(2/1),
+  "1x2": calc(1/2),
+  "3x2": calc(3/2),
+  "2x3": calc(2/3),
+  "4x3": calc(4/3),
+  "3x4": calc(3/4),
+  "16x9": calc(16/9),
+  "9x16": calc(9/16),
+  "21x9": calc(21/9)
+);
+
+// Grid columns
+$grid-columns: 12;

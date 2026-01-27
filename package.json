@@ -1,0 +1,23 @@
+{
+  "name": "win-css",
+  "version": "1.0.0",
+  "description": "A mobile-first Sass CSS framework with vw-based typography and em-based spacing",
+  "main": "dist/win.css",
+  "scripts": {
+    "build": "sass src/scss/main.scss dist/win.css",
+    "build:min": "sass src/scss/main.scss dist/win.min.css --style=compressed",
+    "watch": "sass --watch src/scss/main.scss dist/win.css"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "framework",
+    "responsive",
+    "mobile-first",
+    "grid"
+  ],
+  "license": "MIT"
+}

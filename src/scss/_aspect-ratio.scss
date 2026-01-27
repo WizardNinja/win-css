@@ -1,0 +1,18 @@
+// ==========================================================================
+// Aspect Ratios
+// ==========================================================================
+
+@use "sass:map";
+@use "variables" as *;
+@use "mixins" as *;
+
+// Generate aspect ratio classes for each breakpoint
+@each $bp-name, $bp-width in $breakpoints {
+  @include breakpoint($bp-name) {
+    @each $ratio-name, $ratio-value in $aspect-ratios {
+      .#{$bp-name}-ar-#{$ratio-name} {
+        aspect-ratio: $ratio-value;
+      }
+    }
+  }
+}
