@@ -1,8 +1,14 @@
 {
   "name": "win-css",
   "version": "1.0.0",
-  "description": "A mobile-first Sass CSS framework with vw-based typography and em-based spacing",
+  "description": "A mobile-first CSS framework with proportionally-scaling vw typography and em spacing",
   "main": "dist/win.css",
+  "style": "dist/win.css",
+  "files": [
+    "dist/win.css",
+    "dist/win.min.css",
+    "dist/win.css.map"
+  ],
   "scripts": {
     "build": "sass src/scss/main.scss dist/win.css",
     "build:min": "sass src/scss/main.scss dist/win.min.css --style=compressed",
@@ -17,7 +23,20 @@
     "framework",
     "responsive",
     "mobile-first",
-    "grid"
+    "grid",
+    "flexbox",
+    "typography",
+    "spacing",
+    "viewport-units"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wizardninja/win-css.git"
+  },
+  "homepage": "https://wizardninja.github.io/win-css/",
+  "bugs": {
+    "url": "https://github.com/wizardninja/win-css/issues"
+  },
+  "author": "",
   "license": "MIT"
 }
