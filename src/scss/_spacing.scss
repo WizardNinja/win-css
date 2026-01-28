@@ -20,6 +20,16 @@
         padding: #{$em-value}em;
       }
 
+      // Padding - top
+      .#{$bp-name}-pt-#{$scale} {
+        padding-top: #{$em-value}em;
+      }
+
+      // Padding - bottom
+      .#{$bp-name}-pb-#{$scale} {
+        padding-bottom: #{$em-value}em;
+      }
+
       // Padding - horizontal (left and right)
       .#{$bp-name}-px-#{$scale} {
         padding-left: #{$em-value}em;
@@ -35,6 +45,16 @@
       // Margin - all sides
       .#{$bp-name}-m-#{$scale} {
         margin: #{$em-value}em;
+      }
+
+      // Margin - top
+      .#{$bp-name}-mt-#{$scale} {
+        margin-top: #{$em-value}em;
+      }
+
+      // Margin - bottom
+      .#{$bp-name}-mb-#{$scale} {
+        margin-bottom: #{$em-value}em;
       }
 
       // Margin - horizontal (left and right)
