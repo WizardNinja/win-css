@@ -8,8 +8,13 @@
 
 // Media query mixin for breakpoints
 @mixin breakpoint($name) {
-  @media (min-width: map.get($breakpoints, $name)) {
+  @if $name == sm {
+    // sm applies at all sizes - no media query wrapper
     @content;
+  } @else {
+    @media (min-width: map.get($breakpoints, $name)) {
+      @content;
+    }
   }
 }
 

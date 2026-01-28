@@ -33,6 +33,8 @@
   @include breakpoint($bp-name) {
     @for $i from 1 through $grid-columns {
       .#{$bp-name}-#{$i} {
+        display: flex;
+        flex-wrap: wrap;
         width: math.percentage(math.div($i, $grid-columns));
       }
     }
