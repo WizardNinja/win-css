@@ -4,24 +4,38 @@
 
 @use "sass:map";
 @use "sass:math";
+@use "sass:list";
 @use "variables" as *;
 @use "mixins" as *;
 
 // Generate font size classes for each breakpoint
 // sm/md: vw = (target-px / breakpoint-width) * 100
+// At each breakpoint, ALL previous breakpoint classes reset to new vw values
 // lg: all classes switch to px values (stops scaling)
+
+// Get list of breakpoint names for iteration
+$bp-names: map.keys($breakpoints);
 
 // sm and md breakpoints: use vw for fluid scaling
 @each $bp-name, $bp-width in $breakpoints {
   @if $bp-name != lg {
     @include breakpoint($bp-name) {
-      @each $size-name, $size-px in $font-pixel-sizes {
-        $px-value: math.div($size-px, 1px);
-        $bp-value: math.div($bp-width, 1px);
-        $vw-value: math.div($px-value, $bp-value) * 100;
+      // Get index of current breakpoint
+      $bp-index: list.index($bp-names, $bp-name);
 
-        .#{$bp-name}-f-#{$size-name} {
-          font-size: #{$vw-value}vw;
+      // Generate classes for current AND all previous breakpoints
+      // All reset to vw values calculated for this breakpoint width
+      @for $i from 1 through $bp-index {
+        $prev-bp-name: list.nth($bp-names, $i);
+
+        @each $size-name, $size-px in $font-pixel-sizes {
+          $px-value: math.div($size-px, 1px);
+          $bp-value: math.div($bp-width, 1px);
+          $vw-value: math.div($px-value, $bp-value) * 100;
+
+          .#{$prev-bp-name}-f-#{$size-name} {
+            font-size: #{$vw-value}vw;
+          }
         }
       }
     }

@@ -79,6 +79,24 @@ ol {
   }
 }
 @media (min-width: 760px) {
+  .sm-f-tiny {
+    font-size: 1.5789473684vw;
+  }
+  .sm-f-small {
+    font-size: 1.8421052632vw;
+  }
+  .sm-f-medium {
+    font-size: 2.1052631579vw;
+  }
+  .sm-f-large {
+    font-size: 2.6315789474vw;
+  }
+  .sm-f-xlarge {
+    font-size: 3.1578947368vw;
+  }
+  .sm-f-huge {
+    font-size: 4.2105263158vw;
+  }
   .md-f-tiny {
     font-size: 1.5789473684vw;
   }
