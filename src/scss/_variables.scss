@@ -39,3 +39,24 @@ $aspect-ratios: (
 
 // Grid columns
 $grid-columns: 12;
+
+// Font weights
+$font-weights: (
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800
+);
+
+// Colors
+$colors: (
+  "black": #000000,
+  "white": #ffffff,
+  "red": #ff0000,
+  "blue": #0000ff,
+  "green": #00ff00,
+  "yellow": #ffff00,
+  "gray": #808080
+);

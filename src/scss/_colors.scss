@@ -1,0 +1,21 @@
+// ==========================================================================
+// Color Utilities
+// ==========================================================================
+
+@use "variables";
+
+// Generate text color utility classes
+// Pattern: .text-{color-name}
+@each $name, $value in variables.$colors {
+  .text-#{$name} {
+    color: $value;
+  }
+}
+
+// Generate background color utility classes
+// Pattern: .bg-{color-name}
+@each $name, $value in variables.$colors {
+  .bg-#{$name} {
+    background-color: $value;
+  }
+}

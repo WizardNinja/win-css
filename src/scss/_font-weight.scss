@@ -1,0 +1,13 @@
+// ==========================================================================
+// Font Weight Utilities
+// ==========================================================================
+
+@use "variables";
+
+// Generate font-weight utility classes
+// Pattern: .fw-{weight-name}
+@each $name, $value in variables.$font-weights {
+  .fw-#{$name} {
+    font-weight: $value;
+  }
+}
